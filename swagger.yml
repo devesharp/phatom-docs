@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: Demo api
+  description: Demo api for the article 'specify two responses with same code based on optional parameter'
+  version: 0.1.0
+paths:
+  /vehicle:
+    post:
+      parameters:
+        - name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczNTg4Mzc2LCJleHAiOjE2NzM1OTE5NzYsIm5iZiI6MTY3MzU4ODM3NiwianRpIjoicndZZGFSTW1YNVdsdEZBZiIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImNhODE0YjQzNjQ1YjY3MzQyMjk4YzIwZDljYjI5Zjc1ZWEyYzcyYjlhMzZmNDYyYTc1YWY1Y2RiZWIyMjNjOTZ8MTY3MzU4ODM3NiJ9.Oq9d5F7kR5GSAaLLPvyQWvwPsBeaicN15z4qJexS1Tk'
+      requestBody:
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Car'
+                - $ref: '#/components/schemas/Bike'
+                - type: object
+                  description: 'request3'
+                  properties:
+                    owner:
+                      type: string
+                    speed:
+                      type: integer
+      responses:
+        '200':
+          description: Get a vehicle
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/Car'
+                  - $ref: '#/components/schemas/Bike'
+                  - type: object
+                    description: 'request3'
+                    properties:
+                      owner:
+                        type: string
+                      speed:
+                        type: integer
+              examples:
+                car:
+                  summary: an example of car
+                  value:
+                    owner: baeldung
+                    plate: AEX305
+                bike:
+                  summary: an example of bike
+                  value:
+                    owner: john doe
+                    speed: 25
+components:
+  schemas:
+    Car:
+      type: object
+      description: 'request'
+      properties:
+        owner:
+          type: string
+        plate:
+          type: string
+    Bike:
+      type: object
+      description: 'request2'
+      properties:
+        owner:
+          type: string
+        speed:
+          type: integer

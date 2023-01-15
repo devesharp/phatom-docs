@@ -6,7 +6,7 @@ import {API} from "./swagger.interface";
 function generateBody(swagger: OpenAPIV3_1.Document, request: OpenAPIV3_1.RequestBodyObject) {
     let body = [];
 
-    Object.entries(request.content).map(([key, value]) => {
+    Object.entries(request?.content ?? {}).map(([key, value]) => {
         let schema = {
             type: key,
             schemas: []
@@ -21,6 +21,8 @@ function generateBody(swagger: OpenAPIV3_1.Document, request: OpenAPIV3_1.Reques
                     schema.schemas.push(v);
                 }
             });
+        } else {
+            schema.schemas.push(request.content[key].schema);
         }
         body.push(schema);
     });
@@ -102,9 +104,9 @@ export async function Swagger(file: string): API {
                 }
 
                 menu[tagName].items.push({
-                    name: value2.summary,
+                    name: value2.summary ?? key,
                     path: key,
-                    description: value2.description,
+                    description: value2.description ?? '',
                     method: key2,
                 });
             });

@@ -1,76 +1,2027 @@
-openapi: 3.0.0
+openapi: 3.0.2
 info:
-  title: Demo api
-  description: Demo api for the article 'specify two responses with same code based on optional parameter'
-  version: 0.1.0
+  title: 'API '
+  description: ''
+  version: '1.0'
+servers: []
 paths:
-  /vehicle:
+  /v1/public/real-estates:
     post:
+      tags:
+        - RealEstates
+      summary: 'Criar RealEstates'
+      description: 'Criar RealEstates'
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 1
+                      type:
+                        type: integer
+                        format: int64
+                        example: 1
+                      blocked:
+                        type: boolean
+                        example: true
+                      reason:
+                        type: string
+                        example: 'Omnis qui reprehenderit dolores. Repellat aut et sint veniam quis totam est.'
+                      name:
+                        type: string
+                        example: 'Laborum quo non sint quae dolore facilis est. Id omnis est eum aut expedita.'
+                      email_notifications:
+                        type: string
+                        example: 'Sit rerum nulla enim velit eius ducimus. Modi debitis a aut eaque earum ex natus quo.'
+                      created_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      owner:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Possimus minus ex aspernatur. Ullam nam dolorem et aut eligendi ullam.'
+                          role:
+                            type: string
+                            example: REAL_ESTATE_OWNER
+                          login:
+                            type: string
+                            example: 'Possimus est et quas voluptatem natus voluptatem. Corporis minus ut quae et dolorem.'
+                          email:
+                            type: string
+                            example: 'Ut ut ea excepturi. Eaque eum repudiandae sint veniam modi est. Dolor iusto provident sed ex.'
+                          CPF:
+                            type: string
+                            example: 557.065.503-78
+                          document:
+                            type: string
+                            example: 26.164.834-6
+                          phones:
+                            type: string
+                            example: 'Et eaque ut natus vel architecto voluptates. Aut qui aut facilis et.'
+                          creci:
+                            type: string
+                            example: 'Commodi laborum est distinctio eum deserunt consequuntur tempora. Quam ut magnam impedit ut.'
+                          image:
+                            type: string
+                            example: 'Doloremque illo hic velit quas sit. At perferendis quae quod consequuntur rerum ratione.'
+                          gender:
+                            type: string
+                            example: M
+                          agenda_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          tasks_notifications_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          partnership_chat_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          properties_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          deleted_at:
+                            type: 'NULL'
+                            example: null
+                          created_at:
+                            type: string
+                            example: '2023-01-15T19:07:43.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2023-01-15T19:07:43.000000Z'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                type:
+                  type: integer
+                  format: int64
+                  example: 1
+                  description: 'Tipo da imobiliária'
+                blocked:
+                  type: boolean
+                  example: true
+                  description: 'Imobiliária bloqueada'
+                reason:
+                  type: string
+                  example: 'Omnis qui reprehenderit dolores. Repellat aut et sint veniam quis totam est.'
+                  description: 'Motivo do bloqueio da imobiliária'
+                name:
+                  type: string
+                  example: 'Laborum quo non sint quae dolore facilis est. Id omnis est eum aut expedita.'
+                  description: '1'
+                owner:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: 'Possimus minus ex aspernatur. Ullam nam dolorem et aut eligendi ullam.'
+                      description: 'Nome do responsável pela imobiliária'
+                    enabled:
+                      type: boolean
+                      example: true
+                    real_estate_id:
+                      type: integer
+                      format: int64
+                      example: 1
+                    role:
+                      type: string
+                      example: 'In sunt sit ab voluptates et ea. Fugit sunt consequuntur temporibus cupiditate.'
+                    login:
+                      type: string
+                      example: 'Possimus est et quas voluptatem natus voluptatem. Corporis minus ut quae et dolorem.'
+                      description: 'Login do responsável pela imobiliária'
+                    email:
+                      type: string
+                      example: 'Ut ut ea excepturi. Eaque eum repudiandae sint veniam modi est. Dolor iusto provident sed ex.'
+                      description: 'Email do responsável pela imobiliária'
+                    password:
+                      type: string
+                      example: 'Cum beatae et voluptate odio. Non aut voluptatem nemo iste.'
+                      description: 'Senha do responsável pela imobiliária'
+                    CPF:
+                      type: string
+                      example: 557.065.503-78
+                      description: 'CPF do responsável pela imobiliária'
+                    document:
+                      type: string
+                      example: 26.164.834-6
+                      description: 'RG do responsável pela imobiliária'
+                    phones:
+                      type: string
+                      example: 'Et eaque ut natus vel architecto voluptates. Aut qui aut facilis et.'
+                      description: 'Telefones do responsável pela imobiliária'
+                    creci:
+                      type: string
+                      example: 'Commodi laborum est distinctio eum deserunt consequuntur tempora. Quam ut magnam impedit ut.'
+                      description: 'CRECI do responsável pela imobiliária'
+                    image:
+                      type: string
+                      example: 'Doloremque illo hic velit quas sit. At perferendis quae quod consequuntur rerum ratione.'
+                      description: 'Foto do responsável pela imobiliária'
+                    gender:
+                      type: string
+                      example: M
+                      description: 'Gênero do responsável pela imobiliária'
+                    agenda_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    tasks_notifications_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    partnership_chat_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    properties_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    remember_token:
+                      type: string
+                      example: '1997-05-04 13:06:07'
+                    remember_token_at:
+                      type: string
+                      example: '1998-10-17 16:21:38'
+                    deleted_at:
+                      type: string
+                      example: '1970-08-18 01:32:14'
+                  required:
+                    - name
+                    - login
+                    - email
+                    - password
+                    - phones
+                  description: 'Proprietário da imobiliária'
+                email_notifications:
+                  type: string
+                  example: 'Sit rerum nulla enim velit eius ducimus. Modi debitis a aut eaque earum ex natus quo.'
+                  description: 'Email para receber notificações'
+              required:
+                - type
+                - name
+                - email_notifications
+                - owner
+  /v1/real-estates:
+    post:
+      tags:
+        - RealEstates
+      summary: 'Criar RealEstates'
+      description: 'Criar RealEstates'
       parameters:
-        - name: Authorization
+        -
+          name: Authorization
           in: header
           description: Authorization
           required: false
           schema:
             type: string
-          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczNTg4Mzc2LCJleHAiOjE2NzM1OTE5NzYsIm5iZiI6MTY3MzU4ODM3NiwianRpIjoicndZZGFSTW1YNVdsdEZBZiIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImNhODE0YjQzNjQ1YjY3MzQyMjk4YzIwZDljYjI5Zjc1ZWEyYzcyYjlhMzZmNDYyYTc1YWY1Y2RiZWIyMjNjOTZ8MTY3MzU4ODM3NiJ9.Oq9d5F7kR5GSAaLLPvyQWvwPsBeaicN15z4qJexS1Tk'
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjYzLCJleHAiOjE2NzM4MTMyNjMsIm5iZiI6MTY3MzgwOTY2MywianRpIjoiZ1BCWmNKcnd0R3FMR01oRiIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImU5NzNkYzBlODQ0ODAxYTA2OTAzZTI4ODU5NDc0N2FhYmE4ZDkxNzc1MTg2ZGVlZWQ5NDFlYjg4NjNiYjQzN2J8MTY3MzgwOTY2MyJ9.O8myq1Zu3InBaKCPYrNmWSCBfuRm8qWeEhsuyqemQjg'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      type:
+                        type: integer
+                        format: int64
+                        example: 1
+                      blocked:
+                        type: boolean
+                        example: false
+                      reason:
+                        type: string
+                        example: 'A molestiae ea a quibusdam vel. Rem et dolor dolore et occaecati velit et.'
+                      name:
+                        type: string
+                        example: 'Autem possimus quam ex est. Veritatis cum delectus dicta quasi.'
+                      email_notifications:
+                        type: string
+                        example: 'Velit enim totam sed minima qui officiis. Quia voluptatibus repudiandae ratione. Ut vel et ratione.'
+                      created_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      owner:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 2
+                          name:
+                            type: string
+                            example: 'Aut quo ut aperiam et porro. Qui veniam temporibus saepe enim. Ipsum cupiditate atque occaecati et.'
+                          role:
+                            type: string
+                            example: REAL_ESTATE_OWNER
+                          login:
+                            type: string
+                            example: 'Occaecati nostrum officiis non odio aut est et. Laboriosam quo sint nostrum ex cumque illo vel.'
+                          email:
+                            type: string
+                            example: 'Illo possimus id vitae quidem. Autem sit nobis qui corporis illo. Et laudantium autem magnam nam.'
+                          CPF:
+                            type: string
+                            example: 561.234.433-23
+                          document:
+                            type: string
+                            example: 81.073.244-6
+                          phones:
+                            type: string
+                            example: 'Laudantium odio et magni autem nemo aut sit quas. Possimus non libero amet quo in earum dolores.'
+                          creci:
+                            type: string
+                            example: 'Est possimus quae magni odio aut. Et doloremque sed aut a dolor illum culpa.'
+                          image:
+                            type: string
+                            example: 'Animi unde dicta dolorum nisi. Et illum aut natus et. Est saepe architecto quia quos qui.'
+                          gender:
+                            type: string
+                            example: M
+                          agenda_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          tasks_notifications_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          partnership_chat_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          properties_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          deleted_at:
+                            type: 'NULL'
+                            example: null
+                          created_at:
+                            type: string
+                            example: '2023-01-15T19:07:43.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2023-01-15T19:07:43.000000Z'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                type:
+                  type: integer
+                  format: int64
+                  example: 1
+                  description: 'Tipo da imobiliária'
+                blocked:
+                  type: boolean
+                  example: false
+                  description: 'Imobiliária bloqueada'
+                reason:
+                  type: string
+                  example: 'A molestiae ea a quibusdam vel. Rem et dolor dolore et occaecati velit et.'
+                  description: 'Motivo do bloqueio da imobiliária'
+                name:
+                  type: string
+                  example: 'Autem possimus quam ex est. Veritatis cum delectus dicta quasi.'
+                  description: '1'
+                owner:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: 'Aut quo ut aperiam et porro. Qui veniam temporibus saepe enim. Ipsum cupiditate atque occaecati et.'
+                      description: 'Nome do responsável pela imobiliária'
+                    enabled:
+                      type: boolean
+                      example: true
+                    real_estate_id:
+                      type: integer
+                      format: int64
+                      example: 1
+                    role:
+                      type: string
+                      example: 'Beatae non eius possimus velit aut aut. Maxime magnam sit sint qui.'
+                    login:
+                      type: string
+                      example: 'Occaecati nostrum officiis non odio aut est et. Laboriosam quo sint nostrum ex cumque illo vel.'
+                      description: 'Login do responsável pela imobiliária'
+                    email:
+                      type: string
+                      example: 'Illo possimus id vitae quidem. Autem sit nobis qui corporis illo. Et laudantium autem magnam nam.'
+                      description: 'Email do responsável pela imobiliária'
+                    password:
+                      type: string
+                      example: 'Nihil culpa ut rem et. Iusto aut eum eos et qui est. Ut pariatur et numquam esse quisquam aut.'
+                      description: 'Senha do responsável pela imobiliária'
+                    CPF:
+                      type: string
+                      example: 561.234.433-23
+                      description: 'CPF do responsável pela imobiliária'
+                    document:
+                      type: string
+                      example: 81.073.244-6
+                      description: 'RG do responsável pela imobiliária'
+                    phones:
+                      type: string
+                      example: 'Laudantium odio et magni autem nemo aut sit quas. Possimus non libero amet quo in earum dolores.'
+                      description: 'Telefones do responsável pela imobiliária'
+                    creci:
+                      type: string
+                      example: 'Est possimus quae magni odio aut. Et doloremque sed aut a dolor illum culpa.'
+                      description: 'CRECI do responsável pela imobiliária'
+                    image:
+                      type: string
+                      example: 'Animi unde dicta dolorum nisi. Et illum aut natus et. Est saepe architecto quia quos qui.'
+                      description: 'Foto do responsável pela imobiliária'
+                    gender:
+                      type: string
+                      example: M
+                      description: 'Gênero do responsável pela imobiliária'
+                    agenda_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    tasks_notifications_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    partnership_chat_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    properties_notification_count:
+                      type: integer
+                      format: int64
+                      example: 0
+                    remember_token:
+                      type: string
+                      example: '2007-09-11 22:39:39'
+                    remember_token_at:
+                      type: string
+                      example: '1989-04-01 05:18:43'
+                    deleted_at:
+                      type: string
+                      example: '2020-02-04 02:18:55'
+                  required:
+                    - name
+                    - login
+                    - email
+                    - password
+                    - phones
+                  description: 'Proprietário da imobiliária'
+                email_notifications:
+                  type: string
+                  example: 'Velit enim totam sed minima qui officiis. Quia voluptatibus repudiandae ratione. Ut vel et ratione.'
+                  description: 'Email para receber notificações'
+              required:
+                - type
+                - name
+                - email_notifications
+                - owner
+  '/v1/real-estates/{id}':
+    post:
+      tags:
+        - RealEstates
+      summary: 'Atualizar RealEstates'
+      description: 'Atualizar RealEstates'
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID do RealEstates'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjYzLCJleHAiOjE2NzM4MTMyNjMsIm5iZiI6MTY3MzgwOTY2MywianRpIjoiZVptZUsyVnNibDFzdDZFeSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjM5NmE4NTM4YWRjZTU4ZmYzOTYxMzE4MmU5OThjYzU3NDJjNTRlNjVhMTU5YjkzMDRlMmY2NTkyOTVhNDY1ODd8MTY3MzgwOTY2MyJ9.8IVONqq8ZX5OhRYyX7Ngw-gsR0IqqsG7nVW0QXsGU-A'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      type:
+                        type: integer
+                        format: int64
+                        example: 1
+                      blocked:
+                        type: boolean
+                        example: true
+                      reason:
+                        type: string
+                        example: 'Optio vel non ab quia. Repellendus molestias deleniti quia modi.'
+                      name:
+                        type: string
+                        example: 'Ipsam quam repellat sit. Impedit rerum veniam necessitatibus ullam voluptas odio.'
+                      email_notifications:
+                        type: string
+                        example: 'Sint placeat molestiae ut repellendus. Exercitationem ullam odit maiores veniam.'
+                      created_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                type:
+                  type: integer
+                  format: int64
+                  example: 1
+                  description: 'Tipo da imobiliária'
+                blocked:
+                  type: boolean
+                  example: true
+                  description: 'Imobiliária bloqueada'
+                reason:
+                  type: string
+                  example: 'Optio vel non ab quia. Repellendus molestias deleniti quia modi.'
+                  description: 'Motivo do bloqueio da imobiliária'
+                name:
+                  type: string
+                  example: 'Ipsam quam repellat sit. Impedit rerum veniam necessitatibus ullam voluptas odio.'
+                  description: '1'
+                email_notifications:
+                  type: string
+                  example: 'Sint placeat molestiae ut repellendus. Exercitationem ullam odit maiores veniam.'
+                  description: 'Email para receber notificações'
+                owner:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: string
+                      description: 'Nome do responsável pela imobiliária'
+                    login:
+                      type: string
+                      example: string
+                      description: 'Login do responsável pela imobiliária'
+                    email:
+                      type: string
+                      example: string
+                      description: 'Email do responsável pela imobiliária'
+                    password:
+                      type: string
+                      example: string
+                      description: 'Senha do responsável pela imobiliária'
+                    CPF:
+                      type: string
+                      example: string
+                      description: 'CPF do responsável pela imobiliária'
+                    document:
+                      type: string
+                      example: string
+                      description: 'RG do responsável pela imobiliária'
+                    phones:
+                      type: string
+                      example: string
+                      description: 'Telefones do responsável pela imobiliária'
+                    creci:
+                      type: string
+                      example: string
+                      description: 'CRECI do responsável pela imobiliária'
+                    image:
+                      type: string
+                      example: string
+                      description: 'Foto do responsável pela imobiliária'
+                    gender:
+                      type: string
+                      example: string
+                      description: 'Gênero do responsável pela imobiliária'
+                  description: 'Proprietário da imobiliária'
+    get:
+      tags:
+        - RealEstates
+      summary: 'Resgatar RealEstates'
+      description: 'Resgatar RealEstates'
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID do RealEstates'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjYzLCJleHAiOjE2NzM4MTMyNjMsIm5iZiI6MTY3MzgwOTY2MywianRpIjoiOWhxVG5qQnZWTGo5VndjcyIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjQ2ZjJkNTFhZmViZmUyMGNiMzcwNWE5NTI3ZDUxNjZkZWEyNTVjYjdiY2U5MzY2MWZjYWVkN2JlZTllM2I2Nzd8MTY3MzgwOTY2MyJ9.KBBLZKuzR2LoDH4PpfzWnmZbISFk_C9btnD7q8UBT_4'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      type:
+                        type: integer
+                        format: int64
+                        example: 2
+                      blocked:
+                        type: boolean
+                        example: false
+                      reason:
+                        type: string
+                        example: 'Soluta inventore non praesentium in. Alias sint quo harum ad reiciendis. Doloribus et vero ducimus.'
+                      name:
+                        type: string
+                        example: 'Necessitatibus est sint aut similique. Ut est qui rerum reprehenderit placeat aliquam.'
+                      email_notifications:
+                        type: string
+                        example: 'Eius nihil rem esse et. Voluptas commodi est sed soluta. Eligendi ea ea blanditiis assumenda.'
+                      created_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15 16:07:43'
+      deprecated: false
+      security: []
+    delete:
+      tags:
+        - RealEstates
+      summary: 'Deletar RealEstates'
+      description: 'Deletar RealEstates'
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Id do RealEstates'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoiMnZNUndrQmVrSHNmMzNBMCIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImQ2ZjUzYmMyY2E5YzczN2JjYmVjZjlkMzhmZWUzZmE5ZGZhNjdmMDM1YzY3NzViOTk2MTIxZDQ2OTQ0Mjc3NDh8MTY3MzgwOTY2NCJ9.9CV8i_pWUA9fasrbDric3vV2kqN39yC3vzROp3q0JIM'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: '2'
+                      deleted:
+                        type: boolean
+                        example: true
+      deprecated: false
+      security: []
+  /v1/real-estates/search:
+    post:
+      tags:
+        - RealEstates
+      summary: 'Buscar RealEstates'
+      description: 'Buscar RealEstates'
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjYzLCJleHAiOjE2NzM4MTMyNjMsIm5iZiI6MTY3MzgwOTY2MywianRpIjoiQnJoS0FQeGtXZWhReWhIOSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjNiZmE5MWI0OGJlYTJiNGUwMmVjMjhjNDczNjY5MDQzMDg5Yjg2Y2I1NTM5ZThkOWFlYzE4MDAzODFhMTc4Nzd8MTY3MzgwOTY2MyJ9.MLrvzCH0pDqylpI6IHB5yPEjoxpvoOLm5KdyaBc97eA'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int64
+                        example: 1
+                      results:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 1
+                            type:
+                              type: integer
+                              format: int64
+                              example: 1
+                            blocked:
+                              type: boolean
+                              example: false
+                            reason:
+                              type: string
+                              example: 'Ut enim est labore. Corrupti enim saepe modi sint magni. Hic enim quis voluptatibus autem.'
+                            name:
+                              type: string
+                              example: 'Qui consequatur sint ut. Quidem sit rerum in. Et voluptas et non qui.'
+                            email_notifications:
+                              type: string
+                              example: 'Vero iusto deleniti nam dolorem. Mollitia nostrum blanditiis eum dolores fuga aut.'
+                            created_at:
+                              type: string
+                              example: '2023-01-15 16:07:43'
+                            updated_at:
+                              type: string
+                              example: '2023-01-15 16:07:43'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                strict_filters:
+                  type: boolean
+                  example: false
+                query:
+                  type: object
+                  properties:
+                    limit:
+                      type: integer
+                      format: int64
+                      example: 1
+                    offset:
+                      type: integer
+                      format: int64
+                      example: 1
+                    sort:
+                      type: object
+                      properties: {  }
+                filters:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 1
+                      description: 'ID da imobiliária'
+                    type:
+                      type: integer
+                      format: int64
+                      example: 1
+                      description: 'Tipo da imobiliária'
+                    blocked:
+                      type: string
+                      example: string
+                      description: 'Imobiliária bloqueada'
+                    name:
+                      type: string
+                      example: string
+                      description: '1'
+                    hash:
+                      type: string
+                      example: string
+                      description: 'Hash unício da imobiliária, para usar nos sites'
+                    email_notifications:
+                      type: string
+                      example: string
+                      description: 'Email para receber notificações'
+  /v1/auth/login:
+    post:
+      tags:
+        - auth
+      summary: Login
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Id laboriosam in dolorem recusandae voluptatem. Et ut ea sed rerum nostrum exercitationem qui est.'
+                          role:
+                            type: string
+                            example: 'Dignissimos id voluptatibus ut saepe. Est ab ut dolorem incidunt natus qui.'
+                          access_token:
+                            type: string
+                            example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2NzM4MDk2NjQsImV4cCI6MzU2NTk2OTY2NCwibmJmIjoxNjczODA5NjY0LCJqdGkiOiJnM3BkWjdlV25lVGVLNWF2Iiwic3ViIjoiMSIsInBydiI6IjU0YjA5ZDZlYmViMmY5YTE0MWYwNDZmYzlmYWYyMTgwZWUwZDUxNDgiLCJ0IjoiYjY2ZWQ4ZTAyNTcwNmI2ZmFkZmZlNDcyMzViYjM1NGFhZTVkNzNiZTUxYjk1N2U4ZWZjYjhkNjNkYWE1MGNkMXwxNjczODA5NjY0In0.nUvAPidfGK2ZWXFvSlUILzl7yRkV8vpfTz_uHf5rGVM
+                          login:
+                            type: string
+                            example: 'Dolorum aspernatur assumenda laboriosam adipisci asperiores maxime. Enim consequatur id fugiat ab.'
+                          email:
+                            type: string
+                            example: 'Sed officiis autem quam. Aliquam culpa distinctio id et possimus et.'
+                          CPF:
+                            type: string
+                            example: 248.940.491-30
+                          document:
+                            type: string
+                            example: 04.585.016-6
+                          phones:
+                            type: string
+                            example: 'Veniam accusantium nobis accusantium molestiae. Et est non optio possimus qui.'
+                          creci:
+                            type: string
+                            example: 'Et est commodi ut est et minus quis. Rerum sit culpa velit et quis. Id harum inventore laborum sed.'
+                          image:
+                            type: string
+                            example: 'Accusantium dolores eius vero. Voluptatum debitis optio ex voluptatibus aut.'
+                          gender:
+                            type: string
+                            example: M
+                          agenda_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          tasks_notifications_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          partnership_chat_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          properties_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          deleted_at:
+                            type: string
+                            example: '1980-07-31T03:49:31.000000Z'
+                          created_at:
+                            type: string
+                            example: '2023-01-15T19:07:44.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2023-01-15T19:07:44.000000Z'
+                      info:
+                        type: object
+                        properties: {  }
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                login:
+                  type: string
+                  example: 'Dolorum aspernatur assumenda laboriosam adipisci asperiores maxime. Enim consequatur id fugiat ab.'
+                  description: 'Login ou email do usuário'
+                password:
+                  type: string
+                  example: 123456aa
+                  description: 'Senha do usuário'
+              required:
+                - login
+                - password
+  /v1/auth/check:
+    post:
+      tags:
+        - auth
+      summary: 'Verificação de AccessToken'
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoiT0NGUGlMU3JrSEllb0E5RSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjFmYTkzZmUwNGRjZWM1YWQ2MzcyZDU0ZWQwNjlhOGEyY2Q1ZmUzYmYxYzZmNjZlZGUyNDY0YmY5YzRiMjA4MDd8MTY3MzgwOTY2NCJ9.GSjSV9yozdsUH1SsZ61jCT7IVTYDuow8azu6vjVtouo'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      user:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                            format: int64
+                            example: 1
+                          name:
+                            type: string
+                            example: 'Et doloremque quis deserunt commodi et. Aut ut itaque et enim adipisci quos.'
+                          role:
+                            type: string
+                            example: 'Est aut nobis ut repellat. Magni sapiente veniam quam qui a eveniet cum.'
+                          login:
+                            type: string
+                            example: 'Est iste repudiandae quibusdam tenetur pariatur voluptatum. Qui et et nostrum neque quasi sed.'
+                          email:
+                            type: string
+                            example: 'Aperiam eum expedita provident. Alias expedita aut voluptate id velit itaque.'
+                          CPF:
+                            type: string
+                            example: 234.307.112-27
+                          document:
+                            type: string
+                            example: 50.781.517-4
+                          phones:
+                            type: string
+                            example: 'Odit porro error facilis error harum quia id. Doloremque vitae quidem repellat velit inventore.'
+                          creci:
+                            type: string
+                            example: 'Necessitatibus consectetur eos autem ut et. Eos dolore occaecati sit et et.'
+                          image:
+                            type: string
+                            example: 'Ea illum animi et qui. Ex quia aut rerum aliquam et natus ullam.'
+                          gender:
+                            type: string
+                            example: F
+                          agenda_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          tasks_notifications_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          partnership_chat_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          properties_notification_count:
+                            type: integer
+                            format: int64
+                            example: 0
+                          deleted_at:
+                            type: string
+                            example: '1975-06-05T03:32:10.000000Z'
+                          created_at:
+                            type: string
+                            example: '2023-01-15T19:07:44.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2023-01-15T19:07:44.000000Z'
+                      info:
+                        type: object
+                        properties: {  }
+      deprecated: false
+      security: []
+  /v1/auth/password-recover:
+    post:
+      tags:
+        - auth
+      summary: 'Recuperar senha'
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      email:
+                        type: string
+                        example: 'Aperiam in iusto natus voluptatem corrupti in ipsa. Et quia non ut qui ratione.'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                login:
+                  type: string
+                  example: 'Expedita sed fugit quisquam velit distinctio. A sint aut velit.'
+                  description: 'Login ou email do usuário'
+  /v1/auth/password-reset:
+    post:
+      tags:
+        - auth
+      summary: 'Recuperar senha'
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      changed:
+                        type: boolean
+                        example: true
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                remember_token:
+                  type: string
+                  example: PXBOLXKP9GGCoo8c6P1E
+                  description: 'Token para recuperação de senha'
+                new_password:
+                  type: string
+                  example: newPassword
+                  description: 'Nova senha'
+              required:
+                - remember_token
+                - new_password
+  /v1/auth/verify-remember-token:
+    post:
+      tags:
+        - auth
+      summary: 'Verificação de token de recuperação de senha'
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      valid:
+                        type: boolean
+                        example: true
+                      remember_token:
+                        type: string
+                        example: GBpgi29F25mqEQug03he
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                remember_token:
+                  type: string
+                  example: GBpgi29F25mqEQug03he
+                  description: 'Token para recuperação de senha'
+  /v1/auth/logout:
+    post:
+      tags:
+        - auth
+      summary: Logout
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoicEEzSVZGaEd5dk0wS3JSNCIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImMzZjNiN2NkMTliMWNhYTU1MGMyMmMwMzRlOTRiMmM3YjJlMGFkZDViODlkYzEzM2NkYjc0ODA4ODg2MWNhNWJ8MTY3MzgwOTY2NCJ9.12WGAtb_kCMdn4HaQio3z3ubSSFjn2AOe3VkPvoU7lk'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      logout:
+                        type: boolean
+                        example: true
+      deprecated: false
+      security: []
+  /v1/users:
+    post:
+      tags:
+        - Users
+      summary: 'Criar Usuários'
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoiODJLeDBFQVdyWWxEaVpreiIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImZkYzhiOGZmMzM5NGNmY2NiYzg5ODk1Y2JjOTUxN2VmZmYwNGQzZTBkNmQxMzBiN2QzMTAwYTBjYzEwODljZWJ8MTY3MzgwOTY2NCJ9.BWQPcXJz1KKidTAjh0F4agHQdY7eKkM43OtIfpbBUYU'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      name:
+                        type: string
+                        example: 'Corrupti aut quia fuga dolorem. Ut aliquid repudiandae amet in repellendus sunt natus.'
+                      role:
+                        type: string
+                        example: 'Dolor itaque qui sed beatae quos vero sed. Est reiciendis eum dolores. Maiores fugiat odio impedit.'
+                      login:
+                        type: string
+                        example: 'Dolores quasi veniam ea blanditiis ad voluptatem odit placeat. Dolorem qui provident eaque.'
+                      email:
+                        type: string
+                        example: 'Laborum natus modi harum animi. Assumenda suscipit sunt inventore nisi.'
+                      CPF:
+                        type: string
+                        example: 850.250.613-19
+                      document:
+                        type: string
+                        example: 25.444.442-1
+                      phones:
+                        type: string
+                        example: 'In animi illo asperiores. Laudantium fugiat dolor aut ducimus. Molestias officiis et harum ducimus.'
+                      creci:
+                        type: string
+                        example: 'Non deserunt officia omnis dolorem. Qui sint quis et tenetur hic.'
+                      image:
+                        type: string
+                        example: 'Ut quia harum dolore provident atque pariatur. Modi inventore et maiores eos.'
+                      gender:
+                        type: string
+                        example: F
+                      agenda_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      tasks_notifications_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      partnership_chat_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      properties_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      deleted_at:
+                        type: 'NULL'
+                        example: null
+                      created_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 'Corrupti aut quia fuga dolorem. Ut aliquid repudiandae amet in repellendus sunt natus.'
+                  description: 'Nome do usuário'
+                role:
+                  type: string
+                  example: 'Dolor itaque qui sed beatae quos vero sed. Est reiciendis eum dolores. Maiores fugiat odio impedit.'
+                  description: 'ID da role'
+                login:
+                  type: string
+                  example: 'Dolores quasi veniam ea blanditiis ad voluptatem odit placeat. Dolorem qui provident eaque.'
+                  description: 'Login do usuário'
+                email:
+                  type: string
+                  example: 'Laborum natus modi harum animi. Assumenda suscipit sunt inventore nisi.'
+                  description: 'Email do usuário'
+                password:
+                  type: string
+                  example: 'Est beatae quia ipsam. Quia ea nobis ut cumque qui. Reiciendis non enim odit iste non.'
+                  description: 'Senha do usuário'
+                CPF:
+                  type: string
+                  example: 850.250.613-19
+                  description: 'CPF do usuário'
+                document:
+                  type: string
+                  example: 25.444.442-1
+                  description: 'RG do usuário'
+                phones:
+                  type: string
+                  example: 'In animi illo asperiores. Laudantium fugiat dolor aut ducimus. Molestias officiis et harum ducimus.'
+                  description: 'Telefones do usuário'
+                creci:
+                  type: string
+                  example: 'Non deserunt officia omnis dolorem. Qui sint quis et tenetur hic.'
+                  description: 'CRECI do usuário'
+                image:
+                  type: string
+                  example: 'Ut quia harum dolore provident atque pariatur. Modi inventore et maiores eos.'
+                  description: 'Foto do usuário'
+                gender:
+                  type: string
+                  example: F
+                  description: 'Gênero do usuário'
+              required:
+                - name
+                - role
+                - login
+                - email
+                - password
+  '/v1/users/{id}':
+    post:
+      tags:
+        - Users
+      summary: 'Atualizar Usuários'
+      description: ''
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID do Users'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoieDRVVERmOUdSZXRXb1VjQyIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjA5ODZiYmRlNDM1NWI4MDg4YmU2OTVmNDUxMjczNjgyZDFhNjBhMDdjMzVlMjU5MTQxM2JkMjg0MGJkOGNmMWV8MTY3MzgwOTY2NCJ9.1LXWswvWrCCBf7_t_TBiBTgQLD2ue3S41DzCKZ_cgrc'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      name:
+                        type: string
+                        example: 'Odio aliquid quod assumenda nam sint. Quis consequatur aliquam consequatur delectus rem.'
+                      role:
+                        type: string
+                        example: 'Consequatur impedit quia quisquam. Repellendus id nesciunt magnam minus ad quia quas.'
+                      login:
+                        type: string
+                        example: 'Molestias itaque quidem in quo sed maiores. Qui quidem sed ratione soluta libero.'
+                      email:
+                        type: string
+                        example: 'Voluptatem quia minus doloribus quas adipisci quasi est. Enim explicabo ut vel atque.'
+                      CPF:
+                        type: string
+                        example: 220.410.250-56
+                      document:
+                        type: string
+                        example: 47.006.171-4
+                      phones:
+                        type: string
+                        example: 'Quia illo sequi corrupti sint adipisci. Illum fugit quis eum. Odio omnis aut est error nihil et.'
+                      creci:
+                        type: string
+                        example: 'Laboriosam saepe aut eligendi animi animi itaque pariatur. Et dolorem ut perferendis.'
+                      image:
+                        type: string
+                        example: 'Et reiciendis est odio at. Quas tempora fugiat earum placeat. Sunt consequuntur sunt aut.'
+                      gender:
+                        type: string
+                        example: M
+                      agenda_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      tasks_notifications_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      partnership_chat_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      properties_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      deleted_at:
+                        type: string
+                        example: '1983-07-09T05:24:51.000000Z'
+                      created_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: 'Odio aliquid quod assumenda nam sint. Quis consequatur aliquam consequatur delectus rem.'
+                  description: 'Nome do usuário'
+                role:
+                  type: string
+                  example: 'Consequatur impedit quia quisquam. Repellendus id nesciunt magnam minus ad quia quas.'
+                  description: 'ID da role'
+                login:
+                  type: string
+                  example: 'Molestias itaque quidem in quo sed maiores. Qui quidem sed ratione soluta libero.'
+                  description: 'Login do usuário'
+                email:
+                  type: string
+                  example: 'Voluptatem quia minus doloribus quas adipisci quasi est. Enim explicabo ut vel atque.'
+                  description: 'Email do usuário'
+                password:
+                  type: string
+                  example: 'Cum voluptas laboriosam modi quas aut est. Ratione qui culpa eveniet. Ut vel et tempora quasi qui.'
+                  description: 'Senha do usuário'
+                CPF:
+                  type: string
+                  example: 220.410.250-56
+                  description: 'CPF do usuário'
+                document:
+                  type: string
+                  example: 47.006.171-4
+                  description: 'RG do usuário'
+                phones:
+                  type: string
+                  example: 'Quia illo sequi corrupti sint adipisci. Illum fugit quis eum. Odio omnis aut est error nihil et.'
+                  description: 'Telefones do usuário'
+                creci:
+                  type: string
+                  example: 'Laboriosam saepe aut eligendi animi animi itaque pariatur. Et dolorem ut perferendis.'
+                  description: 'CRECI do usuário'
+                image:
+                  type: string
+                  example: 'Et reiciendis est odio at. Quas tempora fugiat earum placeat. Sunt consequuntur sunt aut.'
+                  description: 'Foto do usuário'
+                gender:
+                  type: string
+                  example: M
+                  description: 'Gênero do usuário'
+    get:
+      tags:
+        - Users
+      summary: 'Resgatar Usuários'
+      description: ''
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID do Users'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoiek9ZV3c2anJHOENFRkc0WSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImM2MDJiOWYxMWY5Y2ZhZDBhNWJiMGMwODBiYWJjMDI1YjE0YWNjOGY3M2QzMjA5OWUxNjNhNzk2OWVlNzY1ZjR8MTY3MzgwOTY2NCJ9.GlYm6CYotBBaoBB43JBPcYfqu2l8jPdRjVjEbYpUnyI'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        format: int64
+                        example: 2
+                      name:
+                        type: string
+                        example: 'Deleniti veritatis minus at cumque. Quis qui possimus et dolorem nisi.'
+                      role:
+                        type: string
+                        example: 'Eaque corporis debitis quibusdam saepe. Non omnis aut error voluptatibus. Modi quo autem eum nobis.'
+                      login:
+                        type: string
+                        example: 'At officia aut necessitatibus sit. Amet eos et quia. Architecto aut modi veniam sit debitis.'
+                      email:
+                        type: string
+                        example: 'Quo nesciunt sit quod deserunt vitae ut non. Libero rerum sint omnis distinctio.'
+                      CPF:
+                        type: string
+                        example: 362.361.803-75
+                      document:
+                        type: string
+                        example: 23.819.745-1
+                      phones:
+                        type: string
+                        example: 'Sit qui nesciunt voluptates impedit. Dolores atque est eum. Praesentium et id quos praesentium non.'
+                      creci:
+                        type: string
+                        example: 'Neque eos facere quia dicta qui. Debitis dolor nobis beatae voluptatem voluptatibus exercitationem.'
+                      image:
+                        type: string
+                        example: 'Excepturi accusantium nemo nisi dolores necessitatibus. Est quae quo minima esse quaerat.'
+                      gender:
+                        type: string
+                        example: F
+                      agenda_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      tasks_notifications_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      partnership_chat_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      properties_notification_count:
+                        type: integer
+                        format: int64
+                        example: 0
+                      deleted_at:
+                        type: string
+                        example: '1976-02-01T19:19:02.000000Z'
+                      created_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-01-15T19:07:44.000000Z'
+      deprecated: false
+      security: []
+    delete:
+      tags:
+        - Users
+      summary: 'Deletar Usuários'
+      description: ''
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Id do Users'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY1LCJleHAiOjE2NzM4MTMyNjUsIm5iZiI6MTY3MzgwOTY2NSwianRpIjoiNjZaNVNuT3BQSzBNVWtQcSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImQyY2IzMGFjOWM1Nzc2ZmU4ZTQ2Yzc5NzY2ZGQ5NzI4ZWZmYjUwYzZiYmMyZGVhNzg4YmJhYjZhMzIxMDY0MWZ8MTY3MzgwOTY2NSJ9.9h_ifdoj4hZ-gwmEo3pqWa6cO2dNidK14fNXv-D8Zs8'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        example: '2'
+                      deleted:
+                        type: boolean
+                        example: true
+      deprecated: false
+      security: []
+  /v1/users/search:
+    post:
+      tags:
+        - Users
+      summary: 'Buscar Usuários'
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY0LCJleHAiOjE2NzM4MTMyNjQsIm5iZiI6MTY3MzgwOTY2NCwianRpIjoiYTVzVHVkMFlIeW9zelZqUyIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjRmZTgyMmY2YzAzMjc5ZDdmNzlmYTQ1OTdmYTYzZWNlYzAwYTFlNWIyMzg2NGYyYWVkNGEyYWZlZDkxMDIyMzV8MTY3MzgwOTY2NCJ9.0pR4TB0gNKvnHg30wU2ERjrvGuebv_wYDcYKRP6auyI'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      count:
+                        type: integer
+                        format: int64
+                        example: 1
+                      results:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              format: int64
+                              example: 1
+                            name:
+                              type: string
+                              example: 'Ut aliquid cumque at et sunt. Et consequatur corporis vel quia. At consequatur sed quae vero minus.'
+                            role:
+                              type: string
+                              example: 'Quo molestias rerum laudantium voluptas esse. Fuga molestiae sint ab.'
+                            login:
+                              type: string
+                              example: 'Nam a et molestiae nam ut molestiae sint. Aut maxime omnis cupiditate harum praesentium quasi.'
+                            email:
+                              type: string
+                              example: 'Qui accusantium aut ullam animi nulla quis et perspiciatis. Incidunt asperiores amet nam nihil.'
+                            CPF:
+                              type: string
+                              example: 635.785.803-91
+                            document:
+                              type: string
+                              example: 00.549.460-5
+                            phones:
+                              type: string
+                              example: 'Eum corrupti molestias accusantium nulla aut pariatur. Quia blanditiis sit et ipsa corporis nulla.'
+                            creci:
+                              type: string
+                              example: 'Ut autem reiciendis minus est expedita reprehenderit. Harum nobis aspernatur sapiente sint.'
+                            image:
+                              type: string
+                              example: 'Necessitatibus odit voluptatibus dolores aut aut eveniet quod. Cum sint et dolore.'
+                            gender:
+                              type: string
+                              example: F
+                            agenda_notification_count:
+                              type: integer
+                              format: int64
+                              example: 0
+                            tasks_notifications_count:
+                              type: integer
+                              format: int64
+                              example: 0
+                            partnership_chat_notification_count:
+                              type: integer
+                              format: int64
+                              example: 0
+                            properties_notification_count:
+                              type: integer
+                              format: int64
+                              example: 0
+                            deleted_at:
+                              type: string
+                              example: '1993-10-02T05:37:05.000000Z'
+                            created_at:
+                              type: string
+                              example: '2023-01-15T19:07:44.000000Z'
+                            updated_at:
+                              type: string
+                              example: '2023-01-15T19:07:44.000000Z'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                strict_filters:
+                  type: boolean
+                  example: false
+                query:
+                  type: object
+                  properties:
+                    limit:
+                      type: integer
+                      format: int64
+                      example: 1
+                    offset:
+                      type: integer
+                      format: int64
+                      example: 1
+                    sort:
+                      type: object
+                      properties: {  }
+                filters:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      format: int64
+                      example: 1
+                      description: 'ID do usuário'
+                    name:
+                      type: string
+                      example: string
+                      description: 'Nome do usuário'
+                    role:
+                      type: string
+                      example: string
+                      description: 'ID da role'
+                    login:
+                      type: string
+                      example: string
+                      description: 'Login do usuário'
+                    email:
+                      type: string
+                      example: string
+                      description: 'Email do usuário'
+                    CPF:
+                      type: string
+                      example: string
+                      description: 'CPF do usuário'
+                    document:
+                      type: string
+                      example: string
+                      description: 'RG do usuário'
+                    phones:
+                      type: string
+                      example: string
+                      description: 'Telefones do usuário'
+                    creci:
+                      type: string
+                      example: string
+                      description: 'CRECI do usuário'
+                    image:
+                      type: string
+                      example: string
+                      description: 'Foto do usuário'
+                    gender:
+                      type: string
+                      example: string
+                      description: 'Gênero do usuário'
+  /v1/users/change-password:
+    post:
+      tags:
+        - Usuários
+      summary: 'Mudar senha'
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY1LCJleHAiOjE2NzM4MTMyNjUsIm5iZiI6MTY3MzgwOTY2NSwianRpIjoiQ3pLZ21WQzBlMEpCbjRvYyIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6ImY3MTgxNDY5NzIwMjdiMzhkYTY5NDgzMmEyNGViMzZiZjFmYTAzYmMzOGZjNDgyZTA3MDZlYTBkY2UxZjYwODB8MTY3MzgwOTY2NSJ9.CqPrMY5wwJUVkKkTdAbbk03er79W7lRxnk6hZqqi5xo'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      changed:
+                        type: boolean
+                        example: true
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                old_password:
+                  type: string
+                  example: 123456aa
+                  description: 'Senha antiga'
+                new_password:
+                  type: string
+                  example: newPassword
+                  description: 'Nova senha'
+              required:
+                - old_password
+                - new_password
+  '/v1/users/{id}/upload-avatar':
+    post:
+      tags:
+        - Usuários
+      summary: 'Upload de avatar'
+      description: ''
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Id do Usuário'
+          required: true
+          schema:
+            type: string
+          example: 2
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY1LCJleHAiOjE2NzM4MTMyNjUsIm5iZiI6MTY3MzgwOTY2NSwianRpIjoicjQyblN5VWdEeXpVYTJZUSIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjIyMTA1ZWY2NjdjNDRlYzUwZWNlYTFhYmUwMTNkOWYzMjhmN2E5ZmRlZWIxMzBkZDJlYmIzOTMwZmU1MGM3ZTV8MTY3MzgwOTY2NSJ9.1aC0INnwLTFEk6rjbuFcZHBhE3wUfXM2lOnCNZQbvRc'
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
+                    properties:
+                      key:
+                        type: string
+                        example: avatar/image.png
+                      url:
+                        type: string
+                        example: 'https://example.s3.us-east-2.amazonaws.com/avatar/image.png'
+      deprecated: false
+      security: []
       requestBody:
         description: ''
         content:
           multipart/form-data:
             schema:
-              oneOf:
-                - $ref: '#/components/schemas/Car'
-                - $ref: '#/components/schemas/Bike'
-                - type: object
-                  description: 'request3'
-                  properties:
-                    owner:
-                      type: string
-                    speed:
-                      type: integer
+              title: ''
+              description: ''
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+  /v1/users/me/upload-avatar:
+    post:
+      tags:
+        - Usuários
+      summary: 'Upload de avatar usuário atual'
+      description: ''
+      parameters:
+        -
+          name: Authorization
+          in: header
+          description: Authorization
+          required: false
+          schema:
+            type: string
+          example: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiaWF0IjoxNjczODA5NjY1LCJleHAiOjE2NzM4MTMyNjUsIm5iZiI6MTY3MzgwOTY2NSwianRpIjoiNGFiVnpFNkRZV1dmc01iSiIsInN1YiI6IjEiLCJwcnYiOiI1NGIwOWQ2ZWJlYjJmOWExNDFmMDQ2ZmM5ZmFmMjE4MGVlMGQ1MTQ4IiwidCI6IjQxMDY2NDEzMzgyNjQ0MTY5YTNkZjI3YzJlMjQ3MzFlMjMzMmEwNzI3ZGMwZDFjYWExYTVmY2VkMDMwNTBkZGZ8MTY3MzgwOTY2NSJ9.ZjL7t2TjcGVTJtaPKGMhlHmcoSdpfXfa0mLKwd1M7OY'
       responses:
         '200':
-          description: Get a vehicle
+          description: ''
           content:
             application/json:
               schema:
-                oneOf:
-                  - $ref: '#/components/schemas/Car'
-                  - $ref: '#/components/schemas/Bike'
-                  - type: object
-                    description: 'request3'
+                title: ''
+                description: ''
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: object
                     properties:
-                      owner:
+                      key:
                         type: string
-                      speed:
-                        type: integer
-              examples:
-                car:
-                  summary: an example of car
-                  value:
-                    owner: baeldung
-                    plate: AEX305
-                bike:
-                  summary: an example of bike
-                  value:
-                    owner: john doe
-                    speed: 25
-components:
-  schemas:
-    Car:
-      type: object
-      description: 'request'
-      properties:
-        owner:
-          type: string
-        plate:
-          type: string
-    Bike:
-      type: object
-      description: 'request2'
-      properties:
-        owner:
-          type: string
-        speed:
-          type: integer
+                        example: avatar/image.png
+                      url:
+                        type: string
+                        example: 'https://example.s3.us-east-2.amazonaws.com/avatar/image.png'
+      deprecated: false
+      security: []
+      requestBody:
+        description: ''
+        content:
+          multipart/form-data:
+            schema:
+              title: ''
+              description: ''
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary

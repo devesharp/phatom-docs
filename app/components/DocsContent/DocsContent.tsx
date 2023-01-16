@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import {API} from "../../service/swagger/swagger.interface";
-import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
-import Link from "next/link";
-import classNames from "classnames";
+import { StickyContainer, Sticky } from 'react-sticky';
 import {GroupSection} from "../GroupSection/GroupSection";
 
 const StyledContainer = styled.div`
@@ -13,7 +10,7 @@ const StyledContainer = styled.div`
 
   .title-group {
     padding-bottom: 10px;
-    color: #7e8895;
+    color: #f4f6fa;
     font-weight: 600;
   }
 
@@ -56,11 +53,13 @@ export function DocsContent(props: IProps) {
                 </p>
             </div>
 
-            <div className="page-section">
+
+                <StickyContainer className="page-section">
                 <div className="title-group">Rotas</div>
 
                 {props.api.sections.map((value) => <GroupSection key={value.group} api={props.api} section={value} />)}
-            </div>
+                </StickyContainer>
+
         </StyledContainer>
     );
 }
